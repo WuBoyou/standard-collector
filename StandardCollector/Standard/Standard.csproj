@@ -58,6 +58,7 @@
     <Compile Include="Rules\UicStandardRule.cs" />
     <Compile Include="Rules\UicStandardStruct.cs" />
     <Compile Include="StandardInfo.cs" />
+    <Compile Include="StandardParser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
