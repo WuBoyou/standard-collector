@@ -20,21 +20,5 @@ namespace Standard.Rules
         }
 
         protected string Rule { get { return this.rule; } }
-
-        public override StandardInfo GetStandardInfo(string fullname)
-        {
-            try
-            {
-                ChinaStandardStruct standard = this.GetStandardStruct(fullname);
-                return new StandardInfo(standard.GetStandardNumber(), standard.Name);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-
-        }
-
-        public abstract ChinaStandardStruct GetStandardStruct(string fullname);
     }
 }

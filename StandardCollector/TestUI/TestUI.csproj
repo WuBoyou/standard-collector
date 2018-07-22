@@ -54,6 +54,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadDataForm.Designer.cs">
+      <DependentUpon>ReadDataForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RetrieveFilesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReadDataForm.resx">
+      <DependentUpon>ReadDataForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RetrieveFilesForm.resx">
       <DependentUpon>RetrieveFilesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,9 +97,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Standard\Standard.csproj">
+    <ProjectReference Include="..\Standard\StandardBase.csproj">
       <Project>{7f02070d-69a4-4dde-8f8d-85318c9fea31}</Project>
-      <Name>Standard</Name>
+      <Name>StandardBase</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

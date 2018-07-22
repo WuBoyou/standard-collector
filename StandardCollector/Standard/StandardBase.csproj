@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7F02070D-69A4-4DDE-8F8D-85318C9FEA31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Standard</RootNamespace>
+    <AssemblyName>StandardBase</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\AmericanStandardRule.cs" />
+    <Compile Include="Rules\AmericanStandardStruct.cs" />
+    <Compile Include="Rules\ChinaCompulsoryStandardRule.cs" />
+    <Compile Include="Rules\ChinaStandardRule.cs" />
+    <Compile Include="Rules\ChinaStandardStruct.cs" />
+    <Compile Include="Rules\ChinaVoluntaryStandardRule.cs" />
+    <Compile Include="Rules\DataVerification.cs" />
+    <Compile Include="Rules\EuropeStandardRule.cs" />
+    <Compile Include="Rules\EuropeStandardStruct.cs" />
+    <Compile Include="Rules\GermanyStandardRule.cs" />
+    <Compile Include="Rules\GermanyStandardStruct.cs" />
+    <Compile Include="Rules\IecStandardRule.cs" />
+    <Compile Include="Rules\IecStandardStruct.cs" />
+    <Compile Include="Rules\IsoStandardRule.cs" />
+    <Compile Include="Rules\IsoStandardStruct.cs" />
+    <Compile Include="Rules\JapanStandardRule.cs" />
+    <Compile Include="Rules\JapanStandardStruct.cs" />
+    <Compile Include="Rules\StandardRule.cs" />
+    <Compile Include="Rules\TextProcessor.cs" />
+    <Compile Include="Rules\UicStandardRule.cs" />
+    <Compile Include="Rules\UicStandardStruct.cs" />
+    <Compile Include="StandardInfo.cs" />
+    <Compile Include="StandardParser.cs" />
+    <Compile Include="StandardStruct.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

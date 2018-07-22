@@ -21,13 +21,13 @@ namespace Standard
             get { return this.rules; }
         }
 
-        public StandardInfo Parse(string fullname)
+        public StandardStruct Parse(string fullname)
         {
             foreach (var rule in this.rules)
             {
                 try
                 {
-                    StandardInfo standard = rule.GetStandardInfo(fullname);
+                    StandardStruct standard = rule.GetStandard(fullname);
                     if (standard != null)
                         return standard;
                     else

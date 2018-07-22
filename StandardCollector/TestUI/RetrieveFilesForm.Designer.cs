@@ -52,7 +52,7 @@
             // 
             this.txtPath.BackColor = System.Drawing.SystemColors.Window;
             this.txtPath.Location = new System.Drawing.Point(63, 29);
-            this.txtPath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPath.Margin = new System.Windows.Forms.Padding(4);
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(576, 25);
             this.txtPath.TabIndex = 1;
@@ -61,7 +61,7 @@
             // btnRetrieve
             // 
             this.btnRetrieve.Location = new System.Drawing.Point(63, 74);
-            this.btnRetrieve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRetrieve.Margin = new System.Windows.Forms.Padding(4);
             this.btnRetrieve.Name = "btnRetrieve";
             this.btnRetrieve.Size = new System.Drawing.Size(100, 29);
             this.btnRetrieve.TabIndex = 2;
@@ -79,7 +79,7 @@
             this.lstFileList.GridLines = true;
             this.lstFileList.HideSelection = false;
             this.lstFileList.Location = new System.Drawing.Point(19, 121);
-            this.lstFileList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstFileList.Margin = new System.Windows.Forms.Padding(4);
             this.lstFileList.Name = "lstFileList";
             this.lstFileList.Size = new System.Drawing.Size(743, 376);
             this.lstFileList.TabIndex = 3;
@@ -99,12 +99,12 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "标准名";
-            this.columnHeader3.Width = 180;
+            this.columnHeader3.Width = 360;
             // 
             // btnChangePath
             // 
             this.btnChangePath.Location = new System.Drawing.Point(663, 28);
-            this.btnChangePath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChangePath.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangePath.Name = "btnChangePath";
             this.btnChangePath.Size = new System.Drawing.Size(100, 29);
             this.btnChangePath.TabIndex = 4;
@@ -122,7 +122,7 @@
             this.Controls.Add(this.btnRetrieve);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(794, 551);
             this.Name = "RetrieveFilesForm";
             this.Text = "标准文件收集器";

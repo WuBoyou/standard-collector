@@ -16,7 +16,8 @@ namespace Standard.Test.UI.Winforms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RetrieveFilesForm());
+            //Application.Run(new RetrieveFilesForm());
+            Application.Run(new ReadDataForm());
         }
     }
 }

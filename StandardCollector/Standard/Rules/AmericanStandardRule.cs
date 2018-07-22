@@ -37,39 +37,26 @@ namespace Standard.Rules
 
         protected string Rule { get { return this.rule; } }
 
-        public override StandardInfo GetStandardInfo(string fullname)
-        {
-            try
-            {
-                AmericanStandardStruct standard = this.GetStandardStruct(fullname);
-                return new StandardInfo(standard.GetStandardNumber(), standard.Name);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        public AmericanStandardStruct GetStandardStruct(string fullname)
+        public override StandardStruct GetStandard(string fullname)
         {
             fullname = TextProcessor.ReplaceUnderlineCharBySpaceCharacter(fullname);
             Regex regex = new Regex(this.rule);
             Match match = regex.Match(fullname);
             if (match.Success)
             {
-                AmericanStandardStruct standardInfo = new AmericanStandardStruct();
+                string classification = match.Groups[1].Value;
+                string number = match.Groups[2].Value;
+                int year = Int32.Parse(match.Groups[3].Value);
+                string name = regex.Replace(fullname, String.Empty).Trim();
 
-                standardInfo.Classification = match.Groups[1].Value;
-                standardInfo.Number = match.Groups[2].Value;
-                standardInfo.Year = Int32.Parse(match.Groups[3].Value);
-                standardInfo.Name = regex.Replace(fullname, String.Empty).Trim();
+                DataVerification.CheckYear(year);
 
-                DataVerification.CheckYear(standardInfo.Year);
+                AmericanStandardStruct standardInfo = new AmericanStandardStruct(classification, number, year, name);
 
                 return standardInfo;
             }
 
-            throw new ArgumentException("fullname");
+            return null;
         }
     }
 }

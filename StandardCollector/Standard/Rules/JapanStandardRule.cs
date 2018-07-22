@@ -37,41 +37,27 @@ namespace Standard.Rules
 
         protected string Rule { get { return this.rule; } }
 
-        public override StandardInfo GetStandardInfo(string fullname)
-        {
-            try
-            {
-                JapanStandardStruct standard = this.GetStandardStruct(fullname);
-                return new StandardInfo(standard.GetStandardNumber(), standard.Name);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-
-        }
-
-        public JapanStandardStruct GetStandardStruct(string fullname)
+        public override StandardStruct GetStandard(string fullname)
         {
             fullname = TextProcessor.ReplaceUnderlineCharBySpaceCharacter(fullname);
             Regex regex = new Regex(this.rule);
             Match match = regex.Match(fullname);
             if (match.Success)
             {
-                JapanStandardStruct standardInfo = new JapanStandardStruct();
+                string mark = match.Groups[1].Value;
+                string classification = match.Groups[2].Value;
+                string number = match.Groups[3].Value;
+                int year = Int32.Parse(match.Groups[4].Value);
+                string name = regex.Replace(fullname, String.Empty).Trim();
 
-                standardInfo.Mark = match.Groups[1].Value;
-                standardInfo.Classification = match.Groups[2].Value;
-                standardInfo.Number = match.Groups[3].Value;
-                standardInfo.Year = Int32.Parse(match.Groups[4].Value);
-                standardInfo.Name = regex.Replace(fullname, String.Empty).Trim();
+                DataVerification.CheckYear(year);
 
-                DataVerification.CheckYear(standardInfo.Year);
+                JapanStandardStruct standardInfo = new JapanStandardStruct(mark, classification, number, year, name);
 
                 return standardInfo;
             }
 
-            throw new ArgumentException("fullname");
+            return null;
         }
     }
 }

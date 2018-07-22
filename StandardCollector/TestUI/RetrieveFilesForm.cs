@@ -23,9 +23,9 @@ namespace Standard.Test.UI.Winforms
 
         private void TestForm_SizeChanged(object sender, EventArgs e)
         {
-            this.lstFileList.Size = new Size(this.Size.Width - 42, this.Size.Height - 148);
-            this.btnChangePath.Location = new Point(this.Size.Width - 103, 22);
-            this.txtPath.Size = new Size(this.Size.Width - 167, 21);
+            this.lstFileList.Size = new Size(this.Size.Width - 54, this.Size.Height - 148);
+            this.btnChangePath.Location = new Point(this.Size.Width - 134, 28);
+            this.txtPath.Size = new Size(this.Size.Width - 221, 21);
         }
 
         private void btnRetrieve_Click(object sender, EventArgs e)
@@ -50,15 +50,13 @@ namespace Standard.Test.UI.Winforms
                 this.lstFileList.Items.Add(item);
 
                 string fileName = Path.GetFileNameWithoutExtension(file);
-                StandardInfo standard = parser.Parse(fileName);
+                StandardStruct standard = parser.Parse(fileName);
                 if (standard != null)
                 {
-                    item.SubItems[1].Text = standard.Number;
-                    item.SubItems[2].Text = standard.Name;
+                    item.SubItems[1].Text = standard.StandardNumber;
+                    item.SubItems[2].Text = standard.StandardName;
                 }
             }
-
-
         }
 
         private ListViewItem CreateItem(string filename)

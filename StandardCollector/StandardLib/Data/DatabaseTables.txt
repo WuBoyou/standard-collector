@@ -1,0 +1,11 @@
+﻿
+数据库：standards
+
+1. 标准名称表（standard）
+CREATE TABLE `standards`.`standard` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `std_no` VARCHAR(45) NOT NULL,
+  `std_name` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+  UNIQUE INDEX `stdNo_UNIQUE` (`std_no` ASC));

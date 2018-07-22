@@ -35,35 +35,36 @@ namespace Standard.Rules
         {
         }
 
-        public override ChinaStandardStruct GetStandardStruct(string fullname)
+        public override StandardStruct GetStandard(string fullname)
         {
             fullname = TextProcessor.ReplaceUnderlineCharBySpaceCharacter(fullname);
             Regex regex = new Regex(base.Rule);
             Match match = regex.Match(fullname);
             if (match.Success)
             {
-                ChinaStandardStruct standardInfo = new ChinaStandardStruct();
+                string prefix = match.Groups[1].Value;
 
-                standardInfo.Prefix = match.Groups[1].Value;
-
+                string type;
                 string markString = match.Groups[2].Value.Trim().ToUpper();
                 if (markString.Length > 0 && markString.Last() == 'T')
-                    standardInfo.Mark = "/T";
+                    type = "/T";
                 else if (markString.Length > 0 && markString.Last() == 'Z')
-                    standardInfo.Mark = "/Z";
+                    type = "/Z";
                 else
-                    standardInfo.Mark = String.Empty;
+                    type = String.Empty;
 
-                standardInfo.Number = match.Groups[3].Value;
-                standardInfo.Year = Int32.Parse(match.Groups[4].Value);
-                standardInfo.Name = regex.Replace(fullname, String.Empty).Trim();
+                string code = match.Groups[3].Value;
+                int year = Int32.Parse(match.Groups[4].Value);
+                string name = regex.Replace(fullname, String.Empty).Trim();
 
-                DataVerification.CheckYear(standardInfo.Year);
+                DataVerification.CheckYear(year);
+
+                ChinaStandardStruct standardInfo = new ChinaStandardStruct(prefix, type, code, year, name);
 
                 return standardInfo;
             }
 
-            throw new ArgumentException("fullname");
+            return null;
         }
     }
 }
