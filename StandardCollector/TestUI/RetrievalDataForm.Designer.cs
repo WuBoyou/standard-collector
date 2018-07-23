@@ -1,6 +1,6 @@
 ﻿namespace Standard.Test.UI.Winforms
 {
-    partial class ReadDataForm
+    partial class RetrievalDataForm
     {
         /// <summary>
         /// Required designer variable.
@@ -40,17 +40,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtServer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabData = new System.Windows.Forms.TabControl();
+            this.tabQueryData = new System.Windows.Forms.TabControl();
             this.tpTables = new System.Windows.Forms.TabPage();
             this.cbRowLimit = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lstDatatables = new System.Windows.Forms.ListView();
             this.cbDatatables = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tpQuery = new System.Windows.Forms.TabPage();
+            this.btnQueryStandards = new System.Windows.Forms.Button();
+            this.lstResult = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtQueryStandardName = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtQueryStandardNo = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.tabData.SuspendLayout();
+            this.tabQueryData.SuspendLayout();
             this.tpTables.SuspendLayout();
+            this.tpQuery.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -169,15 +179,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "服务器";
             // 
-            // tabData
+            // tabQueryData
             // 
-            this.tabData.Controls.Add(this.tpTables);
-            this.tabData.Controls.Add(this.tabPage2);
-            this.tabData.Location = new System.Drawing.Point(154, 13);
-            this.tabData.Name = "tabData";
-            this.tabData.SelectedIndex = 0;
-            this.tabData.Size = new System.Drawing.Size(436, 349);
-            this.tabData.TabIndex = 1;
+            this.tabQueryData.Controls.Add(this.tpTables);
+            this.tabQueryData.Controls.Add(this.tpQuery);
+            this.tabQueryData.Location = new System.Drawing.Point(154, 13);
+            this.tabQueryData.Name = "tabQueryData";
+            this.tabQueryData.SelectedIndex = 0;
+            this.tabQueryData.Size = new System.Drawing.Size(496, 349);
+            this.tabQueryData.TabIndex = 1;
             // 
             // tpTables
             // 
@@ -189,7 +199,7 @@
             this.tpTables.Location = new System.Drawing.Point(4, 25);
             this.tpTables.Name = "tpTables";
             this.tpTables.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTables.Size = new System.Drawing.Size(428, 320);
+            this.tpTables.Size = new System.Drawing.Size(488, 320);
             this.tpTables.TabIndex = 0;
             this.tpTables.Text = "数据表";
             this.tpTables.UseVisualStyleBackColor = true;
@@ -230,7 +240,7 @@
             this.lstDatatables.Location = new System.Drawing.Point(9, 48);
             this.lstDatatables.MultiSelect = false;
             this.lstDatatables.Name = "lstDatatables";
-            this.lstDatatables.Size = new System.Drawing.Size(413, 261);
+            this.lstDatatables.Size = new System.Drawing.Size(470, 261);
             this.lstDatatables.TabIndex = 2;
             this.lstDatatables.UseCompatibleStateImageBehavior = false;
             this.lstDatatables.View = System.Windows.Forms.View.Details;
@@ -254,31 +264,113 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "数据表";
             // 
-            // tabPage2
+            // tpQuery
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(428, 320);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "应用";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tpQuery.Controls.Add(this.btnQueryStandards);
+            this.tpQuery.Controls.Add(this.lstResult);
+            this.tpQuery.Controls.Add(this.txtQueryStandardName);
+            this.tpQuery.Controls.Add(this.label9);
+            this.tpQuery.Controls.Add(this.txtQueryStandardNo);
+            this.tpQuery.Controls.Add(this.label8);
+            this.tpQuery.Location = new System.Drawing.Point(4, 25);
+            this.tpQuery.Name = "tpQuery";
+            this.tpQuery.Padding = new System.Windows.Forms.Padding(3);
+            this.tpQuery.Size = new System.Drawing.Size(488, 320);
+            this.tpQuery.TabIndex = 1;
+            this.tpQuery.Text = "查询";
+            this.tpQuery.UseVisualStyleBackColor = true;
             // 
-            // ReadDataForm
+            // btnQueryStandards
+            // 
+            this.btnQueryStandards.Location = new System.Drawing.Point(404, 19);
+            this.btnQueryStandards.Name = "btnQueryStandards";
+            this.btnQueryStandards.Size = new System.Drawing.Size(75, 23);
+            this.btnQueryStandards.TabIndex = 5;
+            this.btnQueryStandards.Text = "查询";
+            this.btnQueryStandards.UseVisualStyleBackColor = true;
+            this.btnQueryStandards.Click += new System.EventHandler(this.btnQueryStandards_Click);
+            // 
+            // lstResult
+            // 
+            this.lstResult.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.lstResult.FullRowSelect = true;
+            this.lstResult.GridLines = true;
+            this.lstResult.HideSelection = false;
+            this.lstResult.Location = new System.Drawing.Point(9, 48);
+            this.lstResult.MultiSelect = false;
+            this.lstResult.Name = "lstResult";
+            this.lstResult.Size = new System.Drawing.Size(470, 261);
+            this.lstResult.TabIndex = 4;
+            this.lstResult.UseCompatibleStateImageBehavior = false;
+            this.lstResult.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "标准编号";
+            this.columnHeader1.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "中文名称";
+            this.columnHeader2.Width = 200;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "英文名称";
+            this.columnHeader3.Width = 200;
+            // 
+            // txtQueryStandardName
+            // 
+            this.txtQueryStandardName.Location = new System.Drawing.Point(275, 19);
+            this.txtQueryStandardName.Name = "txtQueryStandardName";
+            this.txtQueryStandardName.Size = new System.Drawing.Size(120, 25);
+            this.txtQueryStandardName.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(202, 22);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 15);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "标准名称";
+            // 
+            // txtQueryStandardNo
+            // 
+            this.txtQueryStandardNo.Location = new System.Drawing.Point(73, 19);
+            this.txtQueryStandardNo.Name = "txtQueryStandardNo";
+            this.txtQueryStandardNo.Size = new System.Drawing.Size(120, 25);
+            this.txtQueryStandardNo.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 15);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "标准编号";
+            // 
+            // RetrievalDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 374);
-            this.Controls.Add(this.tabData);
+            this.ClientSize = new System.Drawing.Size(662, 374);
+            this.Controls.Add(this.tabQueryData);
             this.Controls.Add(this.groupBox1);
             this.MinimumSize = new System.Drawing.Size(620, 420);
-            this.Name = "ReadDataForm";
-            this.Text = "读取数据库";
+            this.Name = "RetrievalDataForm";
+            this.Text = "标准数据库查询系统";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabData.ResumeLayout(false);
+            this.tabQueryData.ResumeLayout(false);
             this.tpTables.ResumeLayout(false);
             this.tpTables.PerformLayout();
+            this.tpQuery.ResumeLayout(false);
+            this.tpQuery.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -296,14 +388,23 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDatabase;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TabControl tabData;
+        private System.Windows.Forms.TabControl tabQueryData;
         private System.Windows.Forms.TabPage tpTables;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tpQuery;
         private System.Windows.Forms.ComboBox cbDatatables;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnConnectDb;
         private System.Windows.Forms.ListView lstDatatables;
         private System.Windows.Forms.ComboBox cbRowLimit;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtQueryStandardName;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtQueryStandardNo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ListView lstResult;
+        private System.Windows.Forms.Button btnQueryStandards;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
