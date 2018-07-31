@@ -9,3 +9,38 @@ CREATE TABLE `standards`.`standard` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   UNIQUE INDEX `stdNo_UNIQUE` (`std_no` ASC));
+
+
+2. 中标网标准信息表 (csres_standard)
+CREATE TABLE `csres_standard` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `csres_id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '标准名称',
+  `stdno` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '标准编号',
+  `state` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '标准状态',
+  `overview` varchar(2000) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '标准简介',
+  `englishName` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '英文名称',
+  `replacedStandardNumber` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '替代情况',
+  `chineseClassification` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '中标分类',
+  `icsClassification` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'ICS分类',
+  `udc` varchar(80) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'UDC分类',
+  `adoptedInternationalStandard` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '采标情况',
+  `publisher` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '发布部门',
+  `issuanceDateString` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '发布日期',
+  `executeDateString` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '实施日期',
+  `revocatoryDateString` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '作废日期',
+  `firstIssuanceDateString` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '首发日期',
+  `reviewDateString` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '复审日期',
+  `sponsor` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '提出单位',
+  `technicalCommittees` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '归口单位',
+  `governor` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '主管部门',
+  `draftingCommittee` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '起草单位',
+  `pagesString` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '页数',
+  `press` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '出版社',
+  `publicationDateString` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '出版日期',
+  `hyperLink` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '标准详情页面链接',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5290 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+
+

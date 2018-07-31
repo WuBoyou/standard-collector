@@ -53,14 +53,39 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtQueryStandardName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtQueryStandardNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.tpStandardFile = new System.Windows.Forms.TabPage();
+            this.gbFileOperation = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtNewFileName = new System.Windows.Forms.TextBox();
+            this.btnFileRename = new System.Windows.Forms.Button();
+            this.gbStandardInfo = new System.Windows.Forms.GroupBox();
+            this.lvMatched = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txtExtractiveStandardName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtExtractiveStandardNo = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.gbFileInfo = new System.Windows.Forms.GroupBox();
+            this.btnOpenFile = new System.Windows.Forms.Button();
+            this.txtFileName = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tabQueryData.SuspendLayout();
             this.tpTables.SuspendLayout();
             this.tpQuery.SuspendLayout();
+            this.tpStandardFile.SuspendLayout();
+            this.gbFileOperation.SuspendLayout();
+            this.gbStandardInfo.SuspendLayout();
+            this.gbFileInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -183,10 +208,11 @@
             // 
             this.tabQueryData.Controls.Add(this.tpTables);
             this.tabQueryData.Controls.Add(this.tpQuery);
+            this.tabQueryData.Controls.Add(this.tpStandardFile);
             this.tabQueryData.Location = new System.Drawing.Point(154, 13);
             this.tabQueryData.Name = "tabQueryData";
             this.tabQueryData.SelectedIndex = 0;
-            this.tabQueryData.Size = new System.Drawing.Size(496, 349);
+            this.tabQueryData.Size = new System.Drawing.Size(516, 379);
             this.tabQueryData.TabIndex = 1;
             // 
             // tpTables
@@ -199,7 +225,7 @@
             this.tpTables.Location = new System.Drawing.Point(4, 25);
             this.tpTables.Name = "tpTables";
             this.tpTables.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTables.Size = new System.Drawing.Size(488, 320);
+            this.tpTables.Size = new System.Drawing.Size(508, 350);
             this.tpTables.TabIndex = 0;
             this.tpTables.Text = "数据表";
             this.tpTables.UseVisualStyleBackColor = true;
@@ -275,14 +301,14 @@
             this.tpQuery.Location = new System.Drawing.Point(4, 25);
             this.tpQuery.Name = "tpQuery";
             this.tpQuery.Padding = new System.Windows.Forms.Padding(3);
-            this.tpQuery.Size = new System.Drawing.Size(488, 320);
+            this.tpQuery.Size = new System.Drawing.Size(508, 350);
             this.tpQuery.TabIndex = 1;
             this.tpQuery.Text = "查询";
             this.tpQuery.UseVisualStyleBackColor = true;
             // 
             // btnQueryStandards
             // 
-            this.btnQueryStandards.Location = new System.Drawing.Point(404, 19);
+            this.btnQueryStandards.Location = new System.Drawing.Point(424, 19);
             this.btnQueryStandards.Name = "btnQueryStandards";
             this.btnQueryStandards.Size = new System.Drawing.Size(75, 23);
             this.btnQueryStandards.TabIndex = 5;
@@ -295,14 +321,15 @@
             this.lstResult.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,
+            this.columnHeader7});
             this.lstResult.FullRowSelect = true;
             this.lstResult.GridLines = true;
             this.lstResult.HideSelection = false;
             this.lstResult.Location = new System.Drawing.Point(9, 48);
             this.lstResult.MultiSelect = false;
             this.lstResult.Name = "lstResult";
-            this.lstResult.Size = new System.Drawing.Size(470, 261);
+            this.lstResult.Size = new System.Drawing.Size(490, 291);
             this.lstResult.TabIndex = 4;
             this.lstResult.UseCompatibleStateImageBehavior = false;
             this.lstResult.View = System.Windows.Forms.View.Details;
@@ -322,17 +349,22 @@
             this.columnHeader3.Text = "英文名称";
             this.columnHeader3.Width = 200;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "标准状态";
+            this.columnHeader7.Width = 80;
+            // 
             // txtQueryStandardName
             // 
-            this.txtQueryStandardName.Location = new System.Drawing.Point(275, 19);
+            this.txtQueryStandardName.Location = new System.Drawing.Point(285, 19);
             this.txtQueryStandardName.Name = "txtQueryStandardName";
-            this.txtQueryStandardName.Size = new System.Drawing.Size(120, 25);
+            this.txtQueryStandardName.Size = new System.Drawing.Size(130, 25);
             this.txtQueryStandardName.TabIndex = 3;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(202, 22);
+            this.label9.Location = new System.Drawing.Point(212, 22);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 15);
             this.label9.TabIndex = 2;
@@ -342,7 +374,7 @@
             // 
             this.txtQueryStandardNo.Location = new System.Drawing.Point(73, 19);
             this.txtQueryStandardNo.Name = "txtQueryStandardNo";
-            this.txtQueryStandardNo.Size = new System.Drawing.Size(120, 25);
+            this.txtQueryStandardNo.Size = new System.Drawing.Size(130, 25);
             this.txtQueryStandardNo.TabIndex = 1;
             // 
             // label8
@@ -354,14 +386,203 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "标准编号";
             // 
+            // tpStandardFile
+            // 
+            this.tpStandardFile.Controls.Add(this.gbFileOperation);
+            this.tpStandardFile.Controls.Add(this.gbStandardInfo);
+            this.tpStandardFile.Controls.Add(this.gbFileInfo);
+            this.tpStandardFile.Location = new System.Drawing.Point(4, 25);
+            this.tpStandardFile.Name = "tpStandardFile";
+            this.tpStandardFile.Padding = new System.Windows.Forms.Padding(3);
+            this.tpStandardFile.Size = new System.Drawing.Size(508, 350);
+            this.tpStandardFile.TabIndex = 2;
+            this.tpStandardFile.Text = "标准文件";
+            this.tpStandardFile.UseVisualStyleBackColor = true;
+            // 
+            // gbFileOperation
+            // 
+            this.gbFileOperation.Controls.Add(this.label14);
+            this.gbFileOperation.Controls.Add(this.txtNewFileName);
+            this.gbFileOperation.Controls.Add(this.btnFileRename);
+            this.gbFileOperation.Location = new System.Drawing.Point(6, 276);
+            this.gbFileOperation.Name = "gbFileOperation";
+            this.gbFileOperation.Size = new System.Drawing.Size(496, 68);
+            this.gbFileOperation.TabIndex = 2;
+            this.gbFileOperation.TabStop = false;
+            this.gbFileOperation.Text = "文件操作";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(90, 29);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(67, 15);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "新文件名";
+            // 
+            // txtNewFileName
+            // 
+            this.txtNewFileName.Location = new System.Drawing.Point(163, 23);
+            this.txtNewFileName.Name = "txtNewFileName";
+            this.txtNewFileName.Size = new System.Drawing.Size(327, 25);
+            this.txtNewFileName.TabIndex = 1;
+            // 
+            // btnFileRename
+            // 
+            this.btnFileRename.Location = new System.Drawing.Point(9, 25);
+            this.btnFileRename.Name = "btnFileRename";
+            this.btnFileRename.Size = new System.Drawing.Size(75, 23);
+            this.btnFileRename.TabIndex = 0;
+            this.btnFileRename.Text = "重命名";
+            this.btnFileRename.UseVisualStyleBackColor = true;
+            this.btnFileRename.Click += new System.EventHandler(this.btnFileRename_Click);
+            // 
+            // gbStandardInfo
+            // 
+            this.gbStandardInfo.Controls.Add(this.lvMatched);
+            this.gbStandardInfo.Controls.Add(this.txtExtractiveStandardName);
+            this.gbStandardInfo.Controls.Add(this.label13);
+            this.gbStandardInfo.Controls.Add(this.txtExtractiveStandardNo);
+            this.gbStandardInfo.Controls.Add(this.label12);
+            this.gbStandardInfo.Location = new System.Drawing.Point(6, 100);
+            this.gbStandardInfo.Name = "gbStandardInfo";
+            this.gbStandardInfo.Size = new System.Drawing.Size(496, 170);
+            this.gbStandardInfo.TabIndex = 1;
+            this.gbStandardInfo.TabStop = false;
+            this.gbStandardInfo.Text = "匹配标准";
+            // 
+            // lvMatched
+            // 
+            this.lvMatched.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.lvMatched.FullRowSelect = true;
+            this.lvMatched.GridLines = true;
+            this.lvMatched.HideSelection = false;
+            this.lvMatched.Location = new System.Drawing.Point(9, 49);
+            this.lvMatched.MultiSelect = false;
+            this.lvMatched.Name = "lvMatched";
+            this.lvMatched.Size = new System.Drawing.Size(481, 115);
+            this.lvMatched.TabIndex = 5;
+            this.lvMatched.UseCompatibleStateImageBehavior = false;
+            this.lvMatched.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "标准编号";
+            this.columnHeader4.Width = 150;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "中文名称";
+            this.columnHeader5.Width = 200;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "英文名称";
+            this.columnHeader6.Width = 200;
+            // 
+            // txtExtractiveStandardName
+            // 
+            this.txtExtractiveStandardName.Location = new System.Drawing.Point(330, 18);
+            this.txtExtractiveStandardName.Name = "txtExtractiveStandardName";
+            this.txtExtractiveStandardName.ReadOnly = true;
+            this.txtExtractiveStandardName.Size = new System.Drawing.Size(160, 25);
+            this.txtExtractiveStandardName.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(257, 21);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 15);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "标准名称";
+            // 
+            // txtExtractiveStandardNo
+            // 
+            this.txtExtractiveStandardNo.Location = new System.Drawing.Point(79, 18);
+            this.txtExtractiveStandardNo.Name = "txtExtractiveStandardNo";
+            this.txtExtractiveStandardNo.ReadOnly = true;
+            this.txtExtractiveStandardNo.Size = new System.Drawing.Size(160, 25);
+            this.txtExtractiveStandardNo.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 21);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 15);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "标准编号";
+            // 
+            // gbFileInfo
+            // 
+            this.gbFileInfo.Controls.Add(this.btnOpenFile);
+            this.gbFileInfo.Controls.Add(this.txtFileName);
+            this.gbFileInfo.Controls.Add(this.label11);
+            this.gbFileInfo.Controls.Add(this.txtFilePath);
+            this.gbFileInfo.Controls.Add(this.label10);
+            this.gbFileInfo.Location = new System.Drawing.Point(6, 6);
+            this.gbFileInfo.Name = "gbFileInfo";
+            this.gbFileInfo.Size = new System.Drawing.Size(496, 88);
+            this.gbFileInfo.TabIndex = 0;
+            this.gbFileInfo.TabStop = false;
+            this.gbFileInfo.Text = "文件信息";
+            // 
+            // btnOpenFile
+            // 
+            this.btnOpenFile.Location = new System.Drawing.Point(415, 51);
+            this.btnOpenFile.Name = "btnOpenFile";
+            this.btnOpenFile.Size = new System.Drawing.Size(75, 23);
+            this.btnOpenFile.TabIndex = 4;
+            this.btnOpenFile.Text = "打开文件";
+            this.btnOpenFile.UseVisualStyleBackColor = true;
+            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
+            // 
+            // txtFileName
+            // 
+            this.txtFileName.Location = new System.Drawing.Point(79, 52);
+            this.txtFileName.Name = "txtFileName";
+            this.txtFileName.ReadOnly = true;
+            this.txtFileName.Size = new System.Drawing.Size(330, 25);
+            this.txtFileName.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(52, 15);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "文件名";
+            // 
+            // txtFilePath
+            // 
+            this.txtFilePath.Location = new System.Drawing.Point(79, 21);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.ReadOnly = true;
+            this.txtFilePath.Size = new System.Drawing.Size(411, 25);
+            this.txtFilePath.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 24);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 15);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "文件路径";
+            // 
             // RetrievalDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 374);
+            this.ClientSize = new System.Drawing.Size(682, 404);
             this.Controls.Add(this.tabQueryData);
             this.Controls.Add(this.groupBox1);
-            this.MinimumSize = new System.Drawing.Size(620, 420);
+            this.MinimumSize = new System.Drawing.Size(700, 450);
             this.Name = "RetrievalDataForm";
             this.Text = "标准数据库查询系统";
             this.groupBox1.ResumeLayout(false);
@@ -371,6 +592,13 @@
             this.tpTables.PerformLayout();
             this.tpQuery.ResumeLayout(false);
             this.tpQuery.PerformLayout();
+            this.tpStandardFile.ResumeLayout(false);
+            this.gbFileOperation.ResumeLayout(false);
+            this.gbFileOperation.PerformLayout();
+            this.gbStandardInfo.ResumeLayout(false);
+            this.gbStandardInfo.PerformLayout();
+            this.gbFileInfo.ResumeLayout(false);
+            this.gbFileInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -406,5 +634,26 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.TabPage tpStandardFile;
+        private System.Windows.Forms.GroupBox gbFileInfo;
+        private System.Windows.Forms.Button btnOpenFile;
+        private System.Windows.Forms.TextBox txtFileName;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtFilePath;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox gbStandardInfo;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtExtractiveStandardName;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtExtractiveStandardNo;
+        private System.Windows.Forms.ListView lvMatched;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.GroupBox gbFileOperation;
+        private System.Windows.Forms.Button btnFileRename;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtNewFileName;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }
