@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDisconnectDb = new System.Windows.Forms.Button();
             this.btnConnectDb = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -68,6 +69,7 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtExtractiveStandardName = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtExtractiveStandardNo = new System.Windows.Forms.TextBox();
@@ -90,6 +92,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnDisconnectDb);
             this.groupBox1.Controls.Add(this.btnConnectDb);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.label5);
@@ -103,10 +106,21 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(136, 350);
+            this.groupBox1.Size = new System.Drawing.Size(136, 376);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "数据库信息";
+            // 
+            // btnDisconnectDb
+            // 
+            this.btnDisconnectDb.Enabled = false;
+            this.btnDisconnectDb.Location = new System.Drawing.Point(30, 341);
+            this.btnDisconnectDb.Name = "btnDisconnectDb";
+            this.btnDisconnectDb.Size = new System.Drawing.Size(75, 23);
+            this.btnDisconnectDb.TabIndex = 11;
+            this.btnDisconnectDb.Text = "关闭";
+            this.btnDisconnectDb.UseVisualStyleBackColor = true;
+            this.btnDisconnectDb.Click += new System.EventHandler(this.btnDisconnectDb_Click);
             // 
             // btnConnectDb
             // 
@@ -311,7 +325,7 @@
             this.btnQueryStandards.Location = new System.Drawing.Point(424, 19);
             this.btnQueryStandards.Name = "btnQueryStandards";
             this.btnQueryStandards.Size = new System.Drawing.Size(75, 23);
-            this.btnQueryStandards.TabIndex = 5;
+            this.btnQueryStandards.TabIndex = 4;
             this.btnQueryStandards.Text = "查询";
             this.btnQueryStandards.UseVisualStyleBackColor = true;
             this.btnQueryStandards.Click += new System.EventHandler(this.btnQueryStandards_Click);
@@ -330,7 +344,7 @@
             this.lstResult.MultiSelect = false;
             this.lstResult.Name = "lstResult";
             this.lstResult.Size = new System.Drawing.Size(490, 291);
-            this.lstResult.TabIndex = 4;
+            this.lstResult.TabIndex = 5;
             this.lstResult.UseCompatibleStateImageBehavior = false;
             this.lstResult.View = System.Windows.Forms.View.Details;
             // 
@@ -417,7 +431,7 @@
             this.label14.Location = new System.Drawing.Point(90, 29);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(67, 15);
-            this.label14.TabIndex = 2;
+            this.label14.TabIndex = 1;
             this.label14.Text = "新文件名";
             // 
             // txtNewFileName
@@ -425,7 +439,7 @@
             this.txtNewFileName.Location = new System.Drawing.Point(163, 23);
             this.txtNewFileName.Name = "txtNewFileName";
             this.txtNewFileName.Size = new System.Drawing.Size(327, 25);
-            this.txtNewFileName.TabIndex = 1;
+            this.txtNewFileName.TabIndex = 2;
             // 
             // btnFileRename
             // 
@@ -456,7 +470,8 @@
             this.lvMatched.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader8});
             this.lvMatched.FullRowSelect = true;
             this.lvMatched.GridLines = true;
             this.lvMatched.HideSelection = false;
@@ -482,6 +497,11 @@
             // 
             this.columnHeader6.Text = "英文名称";
             this.columnHeader6.Width = 200;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "标准状态";
+            this.columnHeader8.Width = 80;
             // 
             // txtExtractiveStandardName
             // 
@@ -655,5 +675,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtNewFileName;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.Button btnDisconnectDb;
     }
 }

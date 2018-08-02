@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Standard.Test.UI.Winforms
+namespace Standard.Data
 {
     public class DatabaseInfo
     {
